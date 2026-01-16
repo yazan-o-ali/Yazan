@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>يزن علي | صفحة تعريفية شخصية</title>
+
+  <style>
+    :root {
+      --primary: #0b3c5d;
+      --accent: #1fa2ff;
+      --accent-soft: #e8f4ff;
+      --text-dark: #1f2933;
+      --text-light: #6b7280;
+      --bg-main: #f4f8fc;
+      --white: #ffffff;
+      
+      /* ألوان الإطارات */
+      --border-basic: #00b894; /* فيروزي */
+      --border-pro: #d4af37;   /* ذهبي */
+      --border-vip: #6c5ce7;   /* بنفسجي VIP */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.9;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 0 60px;
+    }
+
+    /* تصميم الهيدر المرتب */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 20px;
+    }
+
+    header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border: 3px solid var(--white);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      color: var(--text-light);
+    }
+
+    section {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 45px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      font-size: 1.7rem;
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+
+    .services ul {
+      list-style: none;
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .services li {
+      background-color: var(--accent-soft);
+      padding: 25px;
+      border-radius: 16px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* ===== Pricing ===== */
+    .pricing {
+      background: linear-gradient(180deg, #ffffff, var(--accent-soft));
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .plan {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .plan:hover {
+        transform: translateY(-7px);
+    }
+
+    .plan.basic { border: 3px solid var(--border-basic); }
+    .plan.pro { border: 3px solid var(--border-pro); }
+    .plan.vip { border: 3px solid var(--border-vip); }
+
+    .plan.vip::before {
+        content: "الخيار الأكثر تميزاً";
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--border-vip);
+        color: white;
+        padding: 2px 15px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: bold;
+    }
+
+    .plan h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    
+    .plan.basic .price { color: #00997b; }
+    .plan.pro .price { color: #b7950b; }
+    .plan.vip .price { color: var(--border-vip); }
+
+    .plan ul {
+      list-style: none;
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    .plan li {
+      margin-bottom: 12px;
+      color: var(--text-light);
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95rem;
+    }
+    
+    .plan li:last-child {
+        border-bottom: none;
+        color: var(--primary);
+        font-weight: 600;
+        line-height: 1.5;
+        padding-top: 5px;
+    }
+
+    /* ===== Contact ===== */
+    .contact {
+      background: linear-gradient(135deg, var(--primary), #092f46);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 { color: white; }
+    .contact p { color: #dbeafe; max-width: 650px; margin: auto; }
+
+    .contact a {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: var(--accent);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.1rem; }
+      section { padding: 35px 25px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <img src="logo.png" alt="شعار يزن علي">
+    <h1>يزن علي</h1>
+    <p>
+      إنشاء صفحات تعريفية شخصية واضحة وبسيطة،
+      تساعدك على الظهور باحتراف على الإنترنت.
+    </p>
+  </header>
+
+  <section>
+    <h2>من أنا</h2>
+    <p>
+      أنا يزن علي من سوريا، أعمل في إنشاء الصفحات التعريفية للأفراد
+      والمشاريع الصغيرة. أركّز على البساطة والوضوح،
+      مع تقديم تصميم مريح وعصري يخدم حضورك الرقمي.
+    </p>
+  </section>
+
+  <section class="services">
+    <h2>الخدمات</h2>
+    <ul>
+      <li>صفحات تعريفية شخصية (Portfolio)</li>
+      <li>صفحات هبوط للمشاريع الناشئة</li>
+      <li>تصاميم عصرية متجاوبة مع كافة الشاشات</li>
+    </ul>
+  </section>
+
+  <section class="pricing">
+    <h2>خطط الأسعار</h2>
+
+    <div class="plans">
+
+      <div class="plan basic">
+        <h3>الخطة الأساسية</h3>
+        <div class="price">5$</div>
+        <ul>
+          <li>صفحة تعريفية بسيطة وأنيقة</li>
+          <li>اعتماد نصوص العميل كما هي</li>
+          <li><strong>لا تشمل أي تعديلات بعد التسليم</strong></li>
+          <li>شرح فيديو تعليمي لإنشاء حساب GitHub ورفع الملفات لإطلاق موقعك برابط رسمي وشهادة حماية SSL</li>
+        </ul>
+      </div>
+
+      <div class="plan pro">
+        <h3>الخطة الاحترافية</h3>
+        <div class="price">8$</div>
+        <ul>
+          <li>إعادة صياغة النصوص بأسلوب احترافي</li>
+          <li>تنظيم وتنسيق المحتوى بشكل بصري أفضل</li>
+          <li><strong>تعديل واحد متاح بعد التسليم</strong></li>
+          <li>شرح فيديو تعليمي لإنشاء حساب GitHub ورفع الملفات لإطلاق موقعك برابط رسمي وشهادة حماية SSL</li>
+        </ul>
+      </div>
+
+      <div class="plan vip">
+        <h3>خطة VIP</h3>
+        <div class="price">10$</div>
+        <ul>
+          <li>إعادة صياغة النصوص بدقة واحترافية عالية</li>
+          <li>تنظيم المحتوى بأعلى معايير الجودة</li>
+          <li><strong>التسليم خلال 12 ساعة فقط</strong></li>
+          <li><strong>إتاحة 3 تعديلات بعد التسليم</strong></li>
+          <li>شرح فيديو تعليمي لإنشاء حساب GitHub ورفع الملفات لإطلاق موقعك برابط رسمي وشهادة حماية SSL</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>التواصل</h2>
+    <p>جاهز لمساعدتك في إنشاء صفحة تعريفية تليق بك.</p>
+    <a href="https://wa.me/0981669387" target="_blank">تواصل عبر واتساب</a>
+  </section>
+
+</div>
+
+</body>
+</html>
